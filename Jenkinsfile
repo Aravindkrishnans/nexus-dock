@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('run sh') {
           steps {
-            sh './layout.sh'
+            sh 'sh layout.sh'
             }
         }        
     }
