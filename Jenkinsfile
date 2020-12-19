@@ -1,10 +1,11 @@
 
 pipeline {
-    agent {
-        label 'Docker'
-    }
+    agent any
     stages {
         stage ('Checkout') {
+            agent {
+                label 'Docker'
+                }
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '**']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Aravindkrishnans/nexus-dock.git']]])
             }
